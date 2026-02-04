@@ -207,3 +207,30 @@ body {
         display: block;
     }
 }
+
+
+.form-cta {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.form-note {
+    font-size: 1.05em;
+    margin-bottom: 20px;   /* 👈 key line */
+    color: #333;
+}
+
+.donate-form-btn {
+    display: inline-block; /* 👈 prevents overlap */
+    padding: 14px 32px;
+    background-color: #ffd60a;
+    color: #000;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 30px;
+    text-decoration: none;
+}
+
+.donate-form-btn:hover {
+    background-color: #ffbe0b;
+}
