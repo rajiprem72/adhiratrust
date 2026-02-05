@@ -234,3 +234,42 @@ body {
 .donate-form-btn:hover {
     background-color: #ffbe0b;
 }
+
+.qr-donation-section {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 40px 20px;
+    background-color: #fff;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.qr-donation-section h2 {
+    color: #5a189a;
+    margin-bottom: 15px;
+}
+
+.qr-caption {
+    font-size: 1.05em;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    line-height: 1.6;
+}
+
+.qr-box img {
+    width: 220px;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background: #fafafa;
+}
+
+.qr-note {
+    margin-top: 15px;
+    font-size: 0.95em;
+    color: #666;
+}
+
