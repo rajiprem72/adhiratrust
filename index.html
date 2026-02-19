@@ -23,8 +23,16 @@
             text-align: center;
         }
 
-        header h1 { margin-bottom: 10px; font-size: 2.5em; }
-        header p { font-size: 1.1em; max-width: 800px; margin: auto; }
+        header h1 {
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+
+        header p {
+            font-size: 1.1em;
+            max-width: 800px;
+            margin: auto;
+        }
 
         .donate-btn {
             display: inline-block;
@@ -39,7 +47,9 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
 
-        .donate-btn:hover { background-color: #ffbe0b; }
+        .donate-btn:hover {
+            background-color: #ffbe0b;
+        }
 
         section {
             padding: 50px 20px;
@@ -50,8 +60,14 @@
             border-radius: 8px;
         }
 
-        section h2 { color: #5a189a; margin-bottom: 15px; }
-        ul { margin-left: 20px; }
+        section h2 {
+            color: #5a189a;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            margin-left: 20px;
+        }
 
         .highlight {
             background-color: #f1eaff;
@@ -67,79 +83,182 @@
             text-align: center;
         }
 
-        footer h3 { color: #ffd60a; }
-        .bank-details { margin-top: 20px; font-size: 1.05em; }
-
-        /* ===== POPUP ===== */
-        .popup-overlay{
-            position:fixed;
-            top:0; left:0;
-            width:100%; height:100%;
-            background:rgba(0,0,0,.65);
-            display:none;
-            align-items:center;
-            justify-content:center;
-            z-index:9999;
+        footer h3 {
+            color: #ffd60a;
         }
 
-        .popup-box{
-            background:#fff;
-            width:85%;
-            max-width:420px;
-            padding:18px;
-            border-radius:12px;
-            text-align:center;
-            box-shadow:0 10px 30px rgba(0,0,0,.4);
-        }
-
-        .popup-box img{max-width:100%;border-radius:10px;margin-bottom:12px;}
-        .popup-title{font-size:1.5em;font-weight:bold;color:#7b2cbf;}
-        .popup-amount{font-size:1.25em;color:#7b2cbf;font-weight:bold;margin:10px 0;}
-
-        .popup-close{
-            margin-top:15px;
-            padding:10px 25px;
-            border:none;
-            background:#7b2cbf;
-            color:white;
-            border-radius:25px;
-            cursor:pointer;
+        .bank-details {
+            margin-top: 20px;
+            font-size: 1.05em;
         }
     </style>
 </head>
 <body>
+<!-- ================= POPUP HTML (NEW) ================= -->
+<div class="popup-overlay" id="popup">
+    <div class="popup-box">
+        <img src="images/homagundam.jpg" alt="Homagundam">
+        <h2>Need of the Hour</h2>
 
+        <p>
+            Adhira Trust requires a <strong>Copper Homagundam</strong>
+            for conducting sacred spiritual rituals and homa ceremonies.
+        </p>
+
+        <p>
+            The estimated cost is <strong style="color:#7b2cbf;">₹5,000</strong>.
+            We humbly request devotees and well-wishers to support this seva.
+        </p>
+
+        <p style="font-style:italic; color:#555;">
+            This message will be removed once the requirement is fulfilled.
+        </p>
+
+        <button class="close-btn" onclick="closePopup()">Close</button>
+    </div>
+</div>
+<!-- ================= END POPUP ================= -->
 <div id="navbar-placeholder"></div>
-
 <header>
     <h1>ADHIRA TRUST</h1>
 
     <p style="font-size:1.05em; margin-top:10px;">
-        <strong>H.O.:</strong> A9, Metro Flats, New No. 41, Old No. 18,
+        <strong>H.O.:</strong> A9, Metro Flats, New No. 41, Old No. 18,  
         Rangarajapuram Main Road, Kodambakkam, Chennai – 600 024
         <br>
-        <strong>B.O.:</strong> Sri Dwarakaa, 25 Baktapuri Street,
+        <strong>B.O.:</strong> Sri Dwarakaa, 25 Baktapuri Street,  
         Kumbakonam – 612 001
     </p>
 
     <p style="font-size:1em; margin-top:10px;">
-        <strong>PAN:</strong> AAKTA4393E |
-        <strong>URN (80G):</strong> AAKTA4393EF2024/80G |
+        <strong>PAN:</strong> AAKTA4393E &nbsp; | &nbsp;
+        <strong>URN (80G):</strong> AAKTA4393EF2024/80G &nbsp; | &nbsp;
         <strong>PRN (12AA):</strong> AAKTA4393EE20231/12AA
     </p>
 
     <p style="margin-top:15px; max-width:900px; margin-left:auto; margin-right:auto;">
-        A Public Charitable Trust with 80 G exemption, committed to serving humanity,
-        conserving environment, extending charity and spiritual sevas.
+        A Public Charitable Trust  with 80 G exemption,committed to serving humanity,conserving  environment,extending charity and spiritual sevas specifically annadanam(food donation) medical assistance and  education support.
     </p>
 
+    <!-- Eye-catching Donate Button -->
     <a href="donate.html" class="donate-btn">Donate Now</a>
 </header>
 
-<!-- YOUR ENTIRE PAGE CONTENT REMAINS SAME HERE (all sections unchanged) -->
+  
+<section>
+    <h2>About Adhira Trust</h2>
+    <p>
+    Adhira Trust is a Public Charitable Trust formed in 2024 with 80 G exemption. The Trust is driven by the principles of human compassion and duty to serve the society at large and protect the environment as a moral and social responsibility.Key focus areas being charity and spiritual sevas specifically annadhanam (food donation) medical assistance and education support to the underprivileged.    
+    </p>
+    </section>
 
+<section>
+    <h2>Our Core Objectives</h2>
+    <ul>
+        <li>Medical support to the underprivileged</li>
+        <li>Sponsoring education to break poverty cycles</li>
+        <li>Annadanam to the deprived and needy</li>
+        <li>
+            Protection and welfare of indigenous cattle breeds by
+            supporting goshalas with fodder
+        </li>
+        <li>
+            Conservation of the ecosystem through green belt projects,
+            timber tree plantations, and protection of temple lands
+            from encroachment
+        </li>
+    </ul>
+</section>
+
+<section>
+    <h2>Temple Land Reclamation & Green Belt Project</h2>
+    <div class="highlight">
+        <p>
+           <strong>Adhira Trust</strong>  has taken up a pilot project to maintain and support reclaimed fragmented and unproductive  temple punjai lands spread over an extent of 30000.sq ft.In order to make them productive and generate revenue sources for the upkeep proper  fencing, gates for securing the area from encroachment and  borewells have been provided  for  watering 1000 timber tree saplings planted so far. This initiative can be further expanded with your donation towards  installation of solar panels for watering the saplings this summer through drip irrigation.
+        </p>
+
+        <p>
+            The reclaimed land has been made productive by careful
+            measurement, weeding, fencing, gating, borewell installation,
+            and planting of timber tree saplings as a pilot project.
+        </p>
+
+        <p>
+            This initiative not only protects temple assets but also
+            creates sustainable income and prevents future encroachments.
+        </p>
+    </div>
+</section>
+
+<section>
+    <h2>Our Ongoing Services</h2>
+    <ul>
+        <li>Annadanam in specially-abled orphanage homes</li>
+        <li>Annadanam in temples and pathashalas</li>
+        <li>Regular fodder support for goshalas</li>
+        <li>Educational support for underprivileged students</li>
+    </ul>
+
+    <p>
+        One underprivileged undergraduate student has been supported with
+        semester fees and a part-time job opportunity. Such support has been
+        made possible only through generous donors.
+    </p>
+</section>
+
+<section>
+    <h2>Healthcare Collaboration</h2>
+    <p>
+        Sankara Eye Foundation, Coimbatore, has offered collaboration
+        in identifying underprivileged individuals from rural and backward
+        villages for high-quality free eye care screening, diagnosis,
+        and treatment.
+    </p>
+</section>
+
+<section id="donate">
+    <h2>Support Our Mission</h2>
+    <p>
+        We humbly request your support to continue and expand our
+        humanitarian, environmental, and spiritual initiatives.
+    </p>
+
+    <ul>
+        <li><strong>Recurring monthly contributions</strong></li>
+        <li><strong>Corpus fund donations</strong></li>
+    </ul>
+
+    <p>
+        Your contribution makes a lasting difference in lives,
+        livelihoods, and legacy.
+    </p>
+</section>
+<section class="qr-donation-section">
+    <h2>Donate via QR Code</h2>
+
+    <p class="qr-caption">
+        Support the seva activities of Adhira Trust by donating generously.
+        Your contribution enables annadhanam, education support, green belt projects,
+        goshala welfare, and other charitable initiatives carried out with sincerity
+        and responsibility.
+    </p>
+
+    <div class="qr-box">
+        <!-- Replace src with your actual QR code image -->
+        <img src="images/adhira-trust-qr.jpg" alt="Adhira Trust Donation QR Code">
+
+        <p class="qr-note">
+            Scan the QR code using any UPI app<br>
+            (Google Pay, PhonePe, Paytm, BHIM, etc.)
+        </p>
+    </div>
+</section>
+
+
+    
 <footer id="bank-details">
     <h3>Donation Details</h3>
+
     <div class="bank-details">
         <p><strong>Account Name:</strong> Adhira Trust</p>
         <p><strong>SB Account No:</strong> 3912500100787601</p>
@@ -147,50 +266,16 @@
         <p><strong>Branch:</strong> Kumbakonam</p>
         <p><strong>MICR:</strong> 612052002</p>
     </div>
-</footer>
 
-<!-- ===== POPUP INSERTED ===== -->
-<div class="popup-overlay" id="homamPopup">
-  <div class="popup-box">
-
-    <img src="images/homagundam.jpg" alt="Copper Homagundam">
-
-    <div class="popup-title">Need of the Hour</div>
-
-    <p>
-    As part of our ongoing spiritual services, we propose to install a
-    <strong>Copper Homagundam</strong> in the temple premises to facilitate sacred rituals.
+    <p style="margin-top:20px;">
+        Donations are eligible for tax exemption under Section 80G.
     </p>
 
-    <div class="popup-amount">Estimated Cost: ₹5,000</div>
-
-    <p>We humbly request devotees and well-wishers to support this initiative.</p>
-
-    <button class="popup-close" id="closeHomamPopup">I Understand</button>
-  </div>
-</div>
-
+    <p>
+        Thank you for standing with Adhira Trust in  spiritual sevas and acts of  charity.
+    </p>
+</footer>
 <script src="js/script.js"></script>
-
-<script>
-window.addEventListener("load", function () {
-    if (!localStorage.getItem("homamPopupClosed")) {
-        document.getElementById("homamPopup").style.display = "flex";
-    }
-});
-
-document.getElementById("closeHomamPopup").onclick = function () {
-    document.getElementById("homamPopup").style.display = "none";
-    localStorage.setItem("homamPopupClosed", "yes");
-};
-
-document.getElementById("homamPopup").addEventListener("click", function(e){
-    if(e.target.id === "homamPopup"){
-        this.style.display="none";
-        localStorage.setItem("homamPopupClosed", "yes");
-    }
-});
-</script>
 
 </body>
 </html>
