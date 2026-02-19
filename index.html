@@ -1,98 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Adhira Trust – Serving Humanity & Nature</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adhira Trust – Serving Humanity & Nature</title>
 
-    <style>
-        body {font-family: Arial, Helvetica, sans-serif;margin: 0;padding: 0;line-height: 1.6;color: #333;background-color: #fafafa;}
-        header {background: linear-gradient(135deg, #7b2cbf, #5a189a);color: white;padding: 40px 20px;text-align: center;}
-        header h1 {margin-bottom: 10px;font-size: 2.5em;}
-        header p {font-size: 1.1em;max-width: 800px;margin: auto;}
-        .donate-btn {display: inline-block;margin-top: 25px;padding: 15px 35px;background-color: #ffd60a;color: #000;text-decoration: none;font-size: 1.2em;font-weight: bold;border-radius: 30px;box-shadow: 0 4px 10px rgba(0,0,0,0.3);}        
-        .donate-btn:hover {background-color: #ffbe0b;}
-        section {padding: 50px 20px;max-width: 1000px;margin: auto;background-color: #fff;margin-bottom: 20px;border-radius: 8px;}
-        section h2 {color: #5a189a;margin-bottom: 15px;}
-        ul {margin-left: 20px;}
-        .highlight {background-color: #f1eaff;padding: 20px;border-left: 5px solid #7b2cbf;border-radius: 5px;}
-        footer {background-color: #222;color: #ddd;padding: 40px 20px;text-align: center;}
-        footer h3 {color: #ffd60a;}
-        .bank-details {margin-top: 20px;font-size: 1.05em;}
+<style>
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin:0;
+    line-height:1.6;
+    background:#fafafa;
+    color:#333;
+}
 
-        /* ===== POPUP MODAL ===== */
-        .popup-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.65);display:none;align-items:center;justify-content:center;z-index:9999;}
-        .popup-box{background:#fff;width:90%;max-width:500px;border-radius:12px;padding:20px;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,0.4);animation:fadeIn .4s ease;}
-        .popup-box img{max-width:100%;border-radius:10px;margin-bottom:15px;}
-        .popup-title{font-size:1.6em;color:#7b2cbf;font-weight:bold;margin-bottom:10px;}
-        .popup-text{font-size:1.05em;margin-bottom:20px;}
-        .popup-close{background:#7b2cbf;color:white;border:none;padding:10px 25px;border-radius:25px;font-size:1em;cursor:pointer;}
-        .popup-close:hover{background:#5a189a;}
-        @keyframes fadeIn{from{transform:scale(.8);opacity:0}to{transform:scale(1);opacity:1}}
-    </style>
+header{
+    background:linear-gradient(135deg,#7b2cbf,#5a189a);
+    color:white;
+    padding:40px 20px;
+    text-align:center;
+}
+
+section{
+    padding:50px 20px;
+    max-width:1000px;
+    margin:auto;
+    background:#fff;
+    margin-bottom:20px;
+    border-radius:8px;
+}
+
+.donate-btn{
+    display:inline-block;
+    margin-top:25px;
+    padding:15px 35px;
+    background:#ffd60a;
+    color:#000;
+    text-decoration:none;
+    font-weight:bold;
+    border-radius:30px;
+}
+
+footer{
+    background:#222;
+    color:#ddd;
+    padding:40px 20px;
+    text-align:center;
+}
+
+/* ---------- POPUP ---------- */
+.popup-overlay{
+    position:fixed;
+    top:0;left:0;
+    width:100%;height:100%;
+    background:rgba(0,0,0,.65);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:9999;
+}
+
+.popup-box{
+    background:#fff;
+    width:85%;
+    max-width:420px;
+    padding:18px;
+    border-radius:12px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.4);
+    animation:fade .35s ease;
+}
+
+.popup-box img{
+    max-width:100%;
+    border-radius:10px;
+    margin-bottom:12px;
+}
+
+.popup-title{
+    font-size:1.5em;
+    font-weight:bold;
+    color:#7b2cbf;
+}
+
+.amount{
+    font-size:1.25em;
+    color:#7b2cbf;
+    font-weight:bold;
+    margin:10px 0;
+}
+
+.popup-close{
+    margin-top:15px;
+    padding:10px 25px;
+    border:none;
+    background:#7b2cbf;
+    color:white;
+    border-radius:25px;
+    cursor:pointer;
+}
+
+.popup-close:hover{background:#5a189a;}
+
+@keyframes fade{
+from{transform:scale(.85);opacity:0}
+to{transform:scale(1);opacity:1}
+}
+</style>
 </head>
+
 <body>
-<div id="navbar-placeholder"></div>
+
 <header>
-    <h1>ADHIRA TRUST</h1>
-    <p style="font-size:1.05em; margin-top:10px;">
-        <strong>H.O.:</strong> A9, Metro Flats, New No. 41, Old No. 18,  Rangarajapuram Main Road, Kodambakkam, Chennai – 600 024
-        <br>
-        <strong>B.O.:</strong> Sri Dwarakaa, 25 Baktapuri Street,  Kumbakonam – 612 001
-    </p>
-    <p style="font-size:1em; margin-top:10px;"><strong>PAN:</strong> AAKTA4393E &nbsp; | &nbsp;<strong>URN (80G):</strong> AAKTA4393EF2024/80G &nbsp; | &nbsp;<strong>PRN (12AA):</strong> AAKTA4393EE20231/12AA</p>
-    <p style="margin-top:15px; max-width:900px; margin-left:auto; margin-right:auto;">A Public Charitable Trust with 80 G exemption, committed to serving humanity, conserving environment, extending charity and spiritual sevas specifically annadanam (food donation) medical assistance and education support.</p>
-    <a href="donate.html" class="donate-btn">Donate Now</a>
+<h1>ADHIRA TRUST</h1>
+<p>A Public Charitable Trust committed to charity, annadanam, education and environmental service.</p>
+<a href="donate.html" class="donate-btn">Donate Now</a>
 </header>
 
-<!-- ===== NEED OF THE HOUR POPUP ===== -->
-<div class="popup-overlay" id="needPopup">
+<section>
+<h2>About Adhira Trust</h2>
+<p>Serving humanity through medical assistance, education support and spiritual sevas.</p>
+</section>
+
+<footer>
+<p>Thank you for supporting Adhira Trust</p>
+</footer>
+
+<!-- ================= POPUP ================= -->
+<div class="popup-overlay" id="popup">
   <div class="popup-box">
-      <img src="images/need-of-hour.jpg" alt="Need of the Hour">
+
+    <!-- Put your homagundam image -->
+    <img src="images/homagundam.jpg" alt="Copper Homagundam">
+
+    <div class="popup-title">Need of the Hour</div>
+
+    <p>
+    As part of our ongoing spiritual services, we propose to install a
+    <strong>Copper Homagundam</strong> in the temple premises to facilitate
+    sacred rituals and homa ceremonies.
+    </p>
+
+    <div class="amount">Estimated Cost: ₹5,000</div>
+
+    <p>
+    We humbly request devotees and well-wishers to support this initiative
+    through your generous contribution.
+    </p>
       
-     <div class="popup-title">Need of the Hour</div>
+    <button class="popup-close" id="closeBtn">I Understand</button>
 
-<div class="popup-text">
-    <p>
-        As part of our ongoing spiritual services, Adhira Trust proposes to
-        install a <strong>Copper Homagundam</strong> in the temple premises
-        to facilitate sacred rituals and homa ceremonies.
-    </p>
-
-    <p>
-        The estimated cost for this requirement is
-        <strong style="color:#7b2cbf; font-size:1.2em;">₹5,000</strong>.
-    </p>
-
-    <p>
-        We humbly request devotees and well-wishers to support this initiative
-        through your generous contribution.
-    </p>
-
-    <p style="margin-top:10px;">
-        Your participation in this seva will help sustain sacred traditions
-        for the benefit of the community.
-    </p>
-</div>
-
-      <button class="popup-close" onclick="closePopup()">I Understand</button>
   </div>
 </div>
 
 <script>
-// Toggle popup here (change to false once fulfilled)
-const showPopup = true;
+// show only once
+if(!localStorage.getItem("homamPopupClosed")){
+    document.getElementById("popup").style.display="flex";
+}
 
-window.onload = function(){
-    if(showPopup && !localStorage.getItem('popupClosed')){
-        document.getElementById('needPopup').style.display='flex';
+// close button
+document.getElementById("closeBtn").onclick=function(){
+    document.getElementById("popup").style.display="none";
+    localStorage.setItem("homamPopupClosed","yes");
+}
+
+// close outside click
+document.getElementById("popup").addEventListener("click",function(e){
+    if(e.target.id==="popup"){
+        this.style.display="none";
+        localStorage.setItem("homamPopupClosed","yes");
     }
-}
-function closePopup(){
-    document.getElementById('needPopup').style.display='none';
-    localStorage.setItem('popupClosed','yes');
-}
+});
 </script>
 
 </body>
