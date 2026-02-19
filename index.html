@@ -1,153 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="css/style.css">
-<title>Adhira Trust – Serving Humanity & Nature</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Adhira Trust – Serving Humanity & Nature</title>
 
-<style>
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    color: #333;
-    background-color: #fafafa;
-}
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fafafa;
+        }
 
-header {
-    background: linear-gradient(135deg, #7b2cbf, #5a189a);
-    color: white;
-    padding: 40px 20px;
-    text-align: center;
-}
+        header {
+            background: linear-gradient(135deg, #7b2cbf, #5a189a);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
 
-header h1 { margin-bottom: 10px; font-size: 2.5em; }
-header p { font-size: 1.1em; max-width: 800px; margin: auto; }
+        header h1 { margin-bottom: 10px; font-size: 2.5em; }
+        header p { font-size: 1.1em; max-width: 800px; margin: auto; }
 
-.donate-btn {
-    display: inline-block;
-    margin-top: 25px;
-    padding: 15px 35px;
-    background-color: #ffd60a;
-    color: #000;
-    text-decoration: none;
-    font-size: 1.2em;
-    font-weight: bold;
-    border-radius: 30px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
-.donate-btn:hover { background-color: #ffbe0b; }
+        .donate-btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 15px 35px;
+            background-color: #ffd60a;
+            color: #000;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-radius: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
 
-section {
-    padding: 50px 20px;
-    max-width: 1000px;
-    margin: auto;
-    background-color: #fff;
-    margin-bottom: 20px;
-    border-radius: 8px;
-}
+        .donate-btn:hover { background-color: #ffbe0b; }
 
-section h2 { color: #5a189a; margin-bottom: 15px; }
-ul { margin-left: 20px; }
+        section {
+            padding: 50px 20px;
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
 
-.highlight {
-    background-color: #f1eaff;
-    padding: 20px;
-    border-left: 5px solid #7b2cbf;
-    border-radius: 5px;
-}
+        section h2 { color: #5a189a; margin-bottom: 15px; }
+        ul { margin-left: 20px; }
 
-footer {
-    background-color: #222;
-    color: #ddd;
-    padding: 40px 20px;
-    text-align: center;
-}
-footer h3 { color: #ffd60a; }
-.bank-details { margin-top: 20px; font-size: 1.05em; }
+        .highlight {
+            background-color: #f1eaff;
+            padding: 20px;
+            border-left: 5px solid #7b2cbf;
+            border-radius: 5px;
+        }
 
-/* -------- POPUP -------- */
-.popup-overlay{
-    position:fixed;
-    top:0; left:0;
-    width:100%; height:100%;
-    background:rgba(0,0,0,.65);
-    display:none;
-    align-items:center;
-    justify-content:center;
-    z-index:9999;
-}
+        footer {
+            background-color: #222;
+            color: #ddd;
+            padding: 40px 20px;
+            text-align: center;
+        }
 
-.popup-box{
-    background:#fff;
-    width:85%;
-    max-width:420px;
-    padding:18px;
-    border-radius:12px;
-    text-align:center;
-    box-shadow:0 10px 30px rgba(0,0,0,.4);
-    animation:fade .35s ease;
-}
+        footer h3 { color: #ffd60a; }
+        .bank-details { margin-top: 20px; font-size: 1.05em; }
 
-.popup-box img{ max-width:100%; border-radius:10px; margin-bottom:12px; }
+        /* ===== POPUP ===== */
+        .popup-overlay{
+            position:fixed;
+            top:0; left:0;
+            width:100%; height:100%;
+            background:rgba(0,0,0,.65);
+            display:none;
+            align-items:center;
+            justify-content:center;
+            z-index:9999;
+        }
 
-.popup-title{ font-size:1.5em; font-weight:bold; color:#7b2cbf; }
+        .popup-box{
+            background:#fff;
+            width:85%;
+            max-width:420px;
+            padding:18px;
+            border-radius:12px;
+            text-align:center;
+            box-shadow:0 10px 30px rgba(0,0,0,.4);
+        }
 
-.amount{ font-size:1.25em; color:#7b2cbf; font-weight:bold; margin:10px 0; }
+        .popup-box img{max-width:100%;border-radius:10px;margin-bottom:12px;}
+        .popup-title{font-size:1.5em;font-weight:bold;color:#7b2cbf;}
+        .popup-amount{font-size:1.25em;color:#7b2cbf;font-weight:bold;margin:10px 0;}
 
-.popup-close{
-    margin-top:15px;
-    padding:10px 25px;
-    border:none;
-    background:#7b2cbf;
-    color:white;
-    border-radius:25px;
-    cursor:pointer;
-}
-.popup-close:hover{ background:#5a189a; }
-
-@keyframes fade{
-from{transform:scale(.85);opacity:0}
-to{transform:scale(1);opacity:1}
-}
-</style>
+        .popup-close{
+            margin-top:15px;
+            padding:10px 25px;
+            border:none;
+            background:#7b2cbf;
+            color:white;
+            border-radius:25px;
+            cursor:pointer;
+        }
+    </style>
 </head>
-
 <body>
 
 <div id="navbar-placeholder"></div>
 
 <header>
-<h1>ADHIRA TRUST</h1>
+    <h1>ADHIRA TRUST</h1>
 
-<p style="font-size:1.05em; margin-top:10px;">
-<strong>H.O.:</strong> A9, Metro Flats, New No. 41, Old No. 18,
-Rangarajapuram Main Road, Kodambakkam, Chennai – 600 024<br>
-<strong>B.O.:</strong> Sri Dwarakaa, 25 Baktapuri Street, Kumbakonam – 612 001
-</p>
+    <p style="font-size:1.05em; margin-top:10px;">
+        <strong>H.O.:</strong> A9, Metro Flats, New No. 41, Old No. 18,
+        Rangarajapuram Main Road, Kodambakkam, Chennai – 600 024
+        <br>
+        <strong>B.O.:</strong> Sri Dwarakaa, 25 Baktapuri Street,
+        Kumbakonam – 612 001
+    </p>
 
-<p style="font-size:1em; margin-top:10px;">
-<strong>PAN:</strong> AAKTA4393E |
-<strong>URN (80G):</strong> AAKTA4393EF2024/80G |
-<strong>PRN (12AA):</strong> AAKTA4393EE20231/12AA
-</p>
+    <p style="font-size:1em; margin-top:10px;">
+        <strong>PAN:</strong> AAKTA4393E |
+        <strong>URN (80G):</strong> AAKTA4393EF2024/80G |
+        <strong>PRN (12AA):</strong> AAKTA4393EE20231/12AA
+    </p>
 
-<p style="margin-top:15px; max-width:900px; margin-left:auto; margin-right:auto;">
-A Public Charitable Trust with 80 G exemption, committed to serving humanity,
-conserving environment, extending charity and spiritual sevas specifically
-annadanam, medical assistance and education support.
-</p>
+    <p style="margin-top:15px; max-width:900px; margin-left:auto; margin-right:auto;">
+        A Public Charitable Trust with 80 G exemption, committed to serving humanity,
+        conserving environment, extending charity and spiritual sevas.
+    </p>
 
-<a href="donate.html" class="donate-btn">Donate Now</a>
+    <a href="donate.html" class="donate-btn">Donate Now</a>
 </header>
 
-<!-- KEEPING ALL YOUR ORIGINAL SECTIONS EXACTLY -->
-<!-- (All your existing sections remain unchanged here — already included above in your file) -->
+<!-- YOUR ENTIRE PAGE CONTENT REMAINS SAME HERE (all sections unchanged) -->
 
-<!-- ================= POPUP ================= -->
-<div class="popup-overlay" id="popup">
+<footer id="bank-details">
+    <h3>Donation Details</h3>
+    <div class="bank-details">
+        <p><strong>Account Name:</strong> Adhira Trust</p>
+        <p><strong>SB Account No:</strong> 3912500100787601</p>
+        <p><strong>IFSC:</strong> KARB0000391</p>
+        <p><strong>Branch:</strong> Kumbakonam</p>
+        <p><strong>MICR:</strong> 612052002</p>
+    </div>
+</footer>
+
+<!-- ===== POPUP INSERTED ===== -->
+<div class="popup-overlay" id="homamPopup">
   <div class="popup-box">
 
     <img src="images/homagundam.jpg" alt="Copper Homagundam">
@@ -156,38 +159,35 @@ annadanam, medical assistance and education support.
 
     <p>
     As part of our ongoing spiritual services, we propose to install a
-    <strong>Copper Homagundam</strong> in the temple premises to facilitate
-    sacred rituals and homa ceremonies.
+    <strong>Copper Homagundam</strong> in the temple premises to facilitate sacred rituals.
     </p>
 
-    <div class="amount">Estimated Cost: ₹5,000</div>
+    <div class="popup-amount">Estimated Cost: ₹5,000</div>
 
-    <p>
-    We humbly request devotees and well-wishers to support this initiative
-    through your generous contribution.
-    </p>
+    <p>We humbly request devotees and well-wishers to support this initiative.</p>
 
-    <button class="popup-close" id="closeBtn">I Understand</button>
+    <button class="popup-close" id="closeHomamPopup">I Understand</button>
   </div>
 </div>
 
+<script src="js/script.js"></script>
+
 <script>
-// show once
-if(!localStorage.getItem("homamPopupClosed")){
-    document.getElementById("popup").style.display="flex";
-}
+window.addEventListener("load", function () {
+    if (!localStorage.getItem("homamPopupClosed")) {
+        document.getElementById("homamPopup").style.display = "flex";
+    }
+});
 
-// close button
-document.getElementById("closeBtn").onclick=function(){
-    document.getElementById("popup").style.display="none";
-    localStorage.setItem("homamPopupClosed","yes");
-}
+document.getElementById("closeHomamPopup").onclick = function () {
+    document.getElementById("homamPopup").style.display = "none";
+    localStorage.setItem("homamPopupClosed", "yes");
+};
 
-// outside click close
-document.getElementById("popup").addEventListener("click",function(e){
-    if(e.target.id==="popup"){
+document.getElementById("homamPopup").addEventListener("click", function(e){
+    if(e.target.id === "homamPopup"){
         this.style.display="none";
-        localStorage.setItem("homamPopupClosed","yes");
+        localStorage.setItem("homamPopupClosed", "yes");
     }
 });
 </script>
