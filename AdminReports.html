@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Reports - Adhira Trust</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div id="navbar-placeholder"></div>
+
+<section style="max-width:800px;margin:60px auto;text-align:center;">
+    <h2 style="color:#5a189a;">Admin Dashboard</h2>
+
+    <button style="
+        padding:15px 30px;
+        background:#7b2cbf;
+        color:white;
+        border:none;
+        border-radius:8px;
+        font-size:16px;
+        cursor:pointer;">
+        Donors List
+    </button>
+</section>
+
+<footer id="bank-details">
+    <h3>Donation Details</h3>
+    <div class="bank-details">
+        <p><strong>Account Name:</strong> Adhira Trust</p>
+        <p><strong>SB Account No:</strong> 3912500100787601</p>
+        <p><strong>IFSC:</strong> KARB0000391</p>
+        <p><strong>Branch:</strong> Kumbakonam</p>
+        <p><strong>MICR:</strong> 612052002</p>
+    </div>
+</footer>
+
+<script src="js/script.js"></script>
+
+<script>
+if(localStorage.getItem("adminLoggedIn") !== "true"){
+    window.location.href = "admin.html";
+}
+</script>
+
+</body>
+</html>
