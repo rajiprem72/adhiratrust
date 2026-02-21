@@ -324,3 +324,26 @@ body {
     color: #555;
     margin-top: 20px;
 }
+
+/* ===== Footer Styling ===== */
+
+footer {
+    background-color: #222;
+    color: #ddd;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+footer h3 {
+    color: #ffd60a;
+    margin-bottom: 15px;
+}
+
+.bank-details {
+    margin-top: 20px;
+    font-size: 1.05em;
+}
+
+footer p {
+    margin: 8px 0;
+}
