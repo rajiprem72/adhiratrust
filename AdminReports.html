@@ -5,25 +5,54 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Admin Reports - Adhira Trust</title>
 <link rel="stylesheet" href="css/style.css">
+
+<style>
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+}
+th, td{
+    padding:10px;
+    border:1px solid #ccc;
+    text-align:left;
+}
+th{
+    background:#7b2cbf;
+    color:white;
+}
+.name-link{
+    color:#5a189a;
+    cursor:pointer;
+    font-weight:bold;
+}
+.address-row{
+    background:#f9f0ff;
+}
+</style>
 </head>
 
 <body>
 
 <div id="navbar-placeholder"></div>
 
-<section style="max-width:800px;margin:60px auto;text-align:center;">
-    <h2 style="color:#5a189a;">Admin Dashboard</h2>
+<section style="max-width:1100px;margin:40px auto;">
+    <h2 style="color:#5a189a;text-align:center;">Admin Dashboard</h2>
 
-    <button style="
-        padding:15px 30px;
-        background:#7b2cbf;
-        color:white;
-        border:none;
-        border-radius:8px;
-        font-size:16px;
-        cursor:pointer;">
-        Donors List
-    </button>
+    <div style="text-align:center;">
+        <button onclick="loadDonors()" style="
+            padding:12px 30px;
+            background:#7b2cbf;
+            color:white;
+            border:none;
+            border-radius:6px;
+            cursor:pointer;
+            font-size:16px;">
+            Donors List
+        </button>
+    </div>
+
+    <div id="donorTable"></div>
 </section>
 
 <footer id="bank-details">
@@ -40,9 +69,74 @@
 <script src="js/script.js"></script>
 
 <script>
+
+const scriptURL = "PASTE_YOUR_WEB_APP_URL_HERE";
+
+// Protect page
 if(localStorage.getItem("adminLoggedIn") !== "true"){
     window.location.href = "admin.html";
 }
+
+function loadDonors(){
+
+    fetch(scriptURL, {
+        method: "POST",
+        body: JSON.stringify({ action: "getDonors" })
+    })
+    .then(res => res.json())
+    .then(data => {
+
+        if(data.status === "success"){
+
+            let html = `
+            <table>
+            <tr>
+                <th>Name</th>
+                <th>Mobile</th>
+                <th>WhatsApp</th>
+                <th>Email</th>
+                <th>Donation For</th>
+                <th>PAN</th>
+                <th>Monthly Contact</th>
+            </tr>
+            `;
+
+            data.donors.forEach((d, index) => {
+
+                html += `
+                <tr>
+                    <td class="name-link" onclick="toggleAddress(${index})">${d.name}</td>
+                    <td>${d.mobile}</td>
+                    <td>${d.whatsapp}</td>
+                    <td>${d.email}</td>
+                    <td>${d.donationFor}</td>
+                    <td>${d.pan}</td>
+                    <td>${d.monthlyContact}</td>
+                </tr>
+
+                <tr id="address-${index}" class="address-row" style="display:none;">
+                    <td colspan="7">
+                        <strong>Address:</strong><br>
+                        ${d.address1}<br>
+                        ${d.address2}<br>
+                        ${d.city}, ${d.state} - ${d.pincode}
+                    </td>
+                </tr>
+                `;
+            });
+
+            html += "</table>";
+
+            document.getElementById("donorTable").innerHTML = html;
+        }
+    });
+}
+
+function toggleAddress(index){
+    const row = document.getElementById("address-"+index);
+    row.style.display = row.style.display === "none" ? "table-row" : "none";
+}
+
 </script>
 
 </body>
