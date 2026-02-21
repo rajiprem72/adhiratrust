@@ -79,19 +79,20 @@ th{
 <script src="js/script.js"></script>
 
 <script>
-
 const scriptURL = "https://script.google.com/macros/s/AKfycbzeZlTH3V7DroZtX83oEmvvXytG1M5vVVxzhRr-lG5XpDtoSjdiDMgA_YelMF3qAZkm/exec";
 
 // Protect page
 if(localStorage.getItem("adminLoggedIn") !== "true"){
     window.location.href = "admin.html";
 }
-
 function loadDonors(){
+
+    const formData = new URLSearchParams();
+    formData.append("action", "getDonors");
 
     fetch(scriptURL, {
         method: "POST",
-        body: JSON.stringify({ action: "getDonors" })
+        body: formData
     })
     .then(res => res.json())
     .then(data => {
@@ -139,14 +140,27 @@ function loadDonors(){
 
             document.getElementById("donorTable").innerHTML = html;
         }
+        else{
+            alert("No Data Received");
+        }
+
+    })
+    .catch(error => {
+        console.error(error);
+        alert("Server Error while loading donors");
     });
 }
 
+</script>
+    
+
+
+    
+<script>    
 function toggleAddress(index){
     const row = document.getElementById("address-"+index);
     row.style.display = row.style.display === "none" ? "table-row" : "none";
 }
-
 </script>
 
 </body>
