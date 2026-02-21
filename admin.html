@@ -74,8 +74,6 @@
     </p>
 </footer>
 
-<script src="js/script.js"></script>
-
 <script>
 
 const scriptURL = "https://script.google.com/macros/s/AKfycbzeZlTH3V7DroZtX83oEmvvXytG1M5vVVxzhRr-lG5XpDtoSjdiDMgA_YelMF3qAZkm/exec";
@@ -87,7 +85,14 @@ function login(){
 
     fetch(scriptURL, {
         method: "POST",
-        body: JSON.stringify({ username, password })
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            action: "login",   // 🔥 THIS WAS MISSING
+            username: username,
+            password: password
+        })
     })
     .then(res => res.json())
     .then(data => {
@@ -97,10 +102,15 @@ function login(){
         } else {
             document.getElementById("errorMsg").innerText = "Invalid Login";
         }
+    })
+    .catch(error => {
+        document.getElementById("errorMsg").innerText = "Server Error";
+        console.error(error);
     });
 }
 
 </script>
-
+    
+<script src="js/script.js"></script>
 </body>
 </html>
