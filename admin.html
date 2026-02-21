@@ -83,16 +83,14 @@ function login(){
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
 
+    const formData = new URLSearchParams();
+    formData.append("action", "login");
+    formData.append("username", username);
+    formData.append("password", password);
+
     fetch(scriptURL, {
         method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            action: "login",   // 🔥 THIS WAS MISSING
-            username: username,
-            password: password
-        })
+        body: formData
     })
     .then(res => res.json())
     .then(data => {
@@ -109,8 +107,7 @@ function login(){
     });
 }
 
-</script>
-    
+</script>    
 <script src="js/script.js"></script>
 </body>
 </html>
