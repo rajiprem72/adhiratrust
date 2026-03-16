@@ -241,12 +241,32 @@
     </div>
 
     <!-- Video Section -->
-    <div style="text-align:center;">
-        <video controls 
-               style="width:100%; max-width:900px; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.2);">
+<div style="text-align:center;">
+<style>
+.video-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    padding:10px;
+    box-sizing:border-box;
+}
+
+.video-container video{
+    width:100%;
+    max-width:900px;
+    max-height:90vh;
+    border-radius:10px;
+    box-shadow:0 6px 20px rgba(0,0,0,0.2);
+}
+    </style>
+
+    <div class="video-container">
+        <video controls>
             <source src="videos/temple-project-video.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
+    </div>
     </div>
 
 </section>
