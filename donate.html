@@ -218,7 +218,10 @@
 
     <div class="solar-images">
         <!-- Replace with actual estimate images -->
-        <img src="images/solar-estimate-1.jpg" alt="Solar Panel Estimate 1">
+      <img src="images/solar-estimate-1.jpg" 
+         alt="Solar Panel Estimate 1"
+         style="width:100%; max-width:500px; cursor:pointer;"
+         onclick="openImage(this)">
     </div>
 
     <p class="solar-note">
@@ -313,6 +316,11 @@
 </div>
 </section>
 
+
+<div id="imageModal" class="modal" onclick="closeImage()">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="expandedImg">
+</div>    
 <script src="js/script.js"></script>
 </body>
 </html>
