@@ -315,7 +315,16 @@
     </a>
 </div>
 </section>
+<script>
+function openImage(img){
+    document.getElementById("imageModal").style.display = "block";
+    document.getElementById("expandedImg").src = img.src;
+}
 
+function closeImage(){
+    document.getElementById("imageModal").style.display = "none";
+}
+</script>
 
 <div id="imageModal" class="modal" onclick="closeImage()">
     <span class="close">&times;</span>
