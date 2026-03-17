@@ -78,6 +78,45 @@
             border-radius: 30px;
             text-decoration: none;
         }
+.clickable-image{
+    width:100%;
+    max-width:500px;
+    cursor:pointer;
+}
+
+/* Modal Background */
+#imageModal{
+    display:none;
+    position:fixed;
+    z-index:9999;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color:rgba(0,0,0,0.9);
+}
+
+/* Fullscreen Image */
+#modalImg{
+    display:block;
+    margin:auto;
+    max-width:95%;
+    max-height:95vh;
+    margin-top:2%;
+}
+
+/* Close Button */
+#closeBtn{
+    position:absolute;
+    top:20px;
+    right:30px;
+    color:white;
+    font-size:40px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+        
     </style>
 </head>
 <body>
@@ -218,10 +257,9 @@
 
     <div class="solar-images">
         <!-- Replace with actual estimate images -->
-      <img src="images/solar-estimate-1.jpg" 
-         alt="Solar Panel Estimate 1"
-         style="width:100%; max-width:500px; cursor:pointer;"
-         onclick="openImage(this)">
+     <img src="images/solar-estimate-1.jpg" 
+     alt="Solar Panel Estimate 1"
+     class="clickable-image">
     </div>
 
     <p class="solar-note">
@@ -315,21 +353,37 @@
     </a>
 </div>
 </section>
+<div id="imageModal">
+    <span id="closeBtn">&times;</span>
+    <img id="modalImg">
+</div>
 <script>
-function openImage(img){
-    document.getElementById("imageModal").style.display = "block";
-    document.getElementById("expandedImg").src = img.src;
-}
+document.addEventListener("DOMContentLoaded", function(){
 
-function closeImage(){
-    document.getElementById("imageModal").style.display = "none";
-}
+    var modal = document.getElementById("imageModal");
+    var modalImg = document.getElementById("modalImg");
+    var closeBtn = document.getElementById("closeBtn");
+
+    var images = document.getElementsByClassName("clickable-image");
+
+    for(let i=0; i<images.length; i++){
+        images[i].onclick = function(){
+            modal.style.display = "block";
+            modalImg.src = this.src;
+        }
+    }
+
+    closeBtn.onclick = function(){
+        modal.style.display = "none";
+    }
+
+    modal.onclick = function(){
+        modal.style.display = "none";
+    }
+
+});
 </script>
-
-<div id="imageModal" class="modal" onclick="closeImage()">
-    <span class="close">&times;</span>
-    <img class="modal-content" id="expandedImg">
-</div>    
+    
 <script src="js/script.js"></script>
 </body>
 </html>
